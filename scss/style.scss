@@ -1,0 +1,258 @@
+@import '_vars';
+@import '_reset';
+
+body {
+	padding: 50px 0 70px;
+	margin: 0;
+	font-family: Lato;
+	font-weight: 400;
+	font-size: 16px;
+	color: #ffffff;
+	background: #333333;
+}
+
+main {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+	margin: 12px 0;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 22px;
+	line-height: 27px;
+}
+
+h3 {
+	margin-top: 30px;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+
+span {
+	font-weight: 600;
+}
+
+.cqz-button {
+	display: inline-block;
+	padding: 6px 10px;
+	margin: 0 10px 0 0;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+	border-radius: 3px;
+	vertical-align: middle;
+	color: $general-btn-color;
+	letter-spacing: 0.5px;
+	background-color: $general-btn-bg;
+	transition: all 0.2s;
+}
+
+.cqz-button:hover {
+	background-color: darken( $general-btn-bg, 10% );
+}
+
+.cqz-button.cqz-empty-btn {
+	color: #666666;
+	border: 1px solid #666666;
+	background: none;
+
+	&:hover {
+		color: #fff;
+		background: #666;
+	}
+}
+
+table.cqz-statistics-table {
+	width: 100%;
+	margin: 30px 0;
+	font-weight: 200;
+	font-size: 14px;
+	
+	td {  
+		width: 50%;
+		padding-bottom: 15px;
+	}
+
+	ul { margin-bottom: 0; }
+	
+	td.sites {
+		padding-left: 30px;
+		line-height: 17px;
+		width: 30%;
+	}
+
+	td.urls {
+		padding-left: 15px;
+		line-height: 17px;
+		word-break: break-word 
+	}
+}
+
+table.cqz-statistics-table-cookies {
+	width: 100%;
+	margin: 30px -10px;
+	font-weight: 200;
+	table-layout: fixed;
+	border-collapse: collapse;
+	
+
+	td {  
+		width: 50%;
+		font-size: 14px;
+		vertical-align: top;
+		&:first-child {
+			border-right: 1px solid transparent;
+		}
+		
+		.cqz-table-title {
+			text-align: left;
+			padding: 10px 10px 20px;
+			font-size: 16px;
+			font-weight: normal;
+		}
+
+		.cqz-row-statistic {
+			cursor: pointer;
+			overflow: hidden;
+			transition: all 0.3s;
+			padding: 5px 10px 5px;
+			margin-bottom: 1px;
+
+			&.open { 
+				background: rgba(255,255,255,0.05); 
+				.full-info {
+					display: block;
+				}
+			}
+			&:hover { background: rgba(255,255,255,0.1); } 
+
+			.short-info {
+				margin: 0;
+				overflow: hidden;
+
+				.domain-name {
+					float: left;
+					width: 70%;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+				.track-time {
+					float: right;
+					width: 30%;
+					text-align: right;
+					font-weight: 100;
+				}
+			}
+
+		}
+		.full-info {
+			display: none;
+			padding: 5px 0 0;
+			margin: 5px 0;
+			border-top: 1px solid #555;
+
+			.full-url { word-break: break-all; }
+			.blocked-count { margin-bottom: 5px; }
+			ol { margin-bottom: 0; }
+		}
+	}	
+}
+
+.cqz-track-action {
+	margin-bottom: 40px;
+}
+
+.cqz-track-msg {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	background: $track-msg-info-bg;
+
+	&.warning { background: $track-msg-warning-bg; }
+
+	td {
+		height: 50px;
+		padding: 5px;
+		vertical-align: middle;
+
+		&:first-child { padding-left: 20px; }
+		&:last-child { padding-right: 20px; }
+		&.icon { width: 50px; }
+		&.action { text-align: right; }
+	}
+
+	.cqz-button.cqz-empty-btn {
+		color: #fff;
+		border-color: #fff;
+
+		&:hover {
+			color: darken($track-msg-warning-bg, 20%);
+			background: #fff;
+		}
+	}
+}
+
+.cqz-footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 13px 10px 7px;
+	background: #ffffff;
+
+	.cqz-footer-holder {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.cqz-button { 
+		float: right;
+		white-space: nowrap; 
+	}
+
+	.cqz-info {
+		float: left;
+		margin-left: 30px;
+
+		#cliqzlogo {
+			height: 20px;
+			margin-top: 5px;
+			vertical-align: middle;
+		}
+
+		a {
+			color: #506bb8;
+			font-size: 14px;
+			line-height: 30px;
+			vertical-align: middle;
+			margin-left: 30px;
+		}
+
+		#number {
+			margin-left: 8px;
+			line-height: 30px;
+			vertical-align: middle;
+			color: #333333;
+			padding-left: 20px;
+			background: url('../images/phone.svg') no-repeat 4px 4px;
+		}
+		#phone {
+			display: inline-block;
+			white-space: nowrap;
+		}
+	}
+}
+
+
+@import '_responsive';
